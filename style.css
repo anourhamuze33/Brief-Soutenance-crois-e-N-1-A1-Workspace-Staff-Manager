@@ -1,0 +1,449 @@
+/* ================== global ========== */
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Libre+Barcode+EAN13+Text&family=Noto+Sans+Bhaiksuki&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: "Roboto", sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #bcc6d3;
+}
+
+/* =================== sidebar ======== */
+.sidebar {
+    border: 0.2rem solid #77777793;
+    border-radius: 0.5rem;
+    width: 25vw;
+    background-color: #ebecfd;
+    padding: 1.1rem;
+    display: flex; 
+    flex-direction: column;
+    gap: 1rem; 
+}
+
+.sidebar h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #000000;
+    font-weight: bold;
+}
+.staff_list {
+ display: flex; 
+ flex-direction: column;
+ gap: 1rem;  
+}
+.btn_ajout-employees {
+    width: 100%;
+    background-color: #2ecc5d;
+    padding: 0.7rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ================= employee card ================= */
+.employee-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px #00000029;
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+.employee-card:active {
+    cursor: grabbing;
+}
+.employee-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Profile image */
+.employee-photo {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    border: 0.2rem solid #dfdef1;
+}
+.employee-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.employee-role {
+    font-size: 0.8rem;
+    margin: 3px 0 10px;
+    color: #777;
+}
+
+/* btn of editing employee infos */
+.btn-edit{
+    width: 50%;
+    height: 2vw;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+    background-color: #ffc400;
+    color: white;
+}
+
+.btn-move:hover {
+    background: #0062cc;
+}
+
+.btn-remove:hover {
+    background: #e63939;
+}
+/* ==================== main section ================== */
+.main-section{
+width: 80vw;
+height: 42vw;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.sections-container{
+width: 72vw;
+height: 41vw;
+background-image: url(plan-69159a65c5684763515973.jpg);
+background-size: contain;
+background-repeat: no-repeat;
+display: flex;
+flex-direction: row;
+}
+/* ============= division of our page ============= */
+.reception{
+width: 39%;
+height: 100%;
+display: flex;
+flex-direction: column;
+}
+.reception-small{
+width: 99%;
+height: 34%;
+display: flex;
+flex-direction: column;
+padding-top: 0.8rem;
+}
+.reception-grand{
+width: 99%;
+height: 66%;
+}
+.couloir1{
+width: 15.3%;
+height: 100%;
+}
+.rooms{
+    display: flex;
+    width: 45%;
+    height: 100%;
+}
+.rooms1{
+width: 50%;
+height: 100%;
+display: flex;
+flex-direction: column;
+}
+.rooms2{
+width: 50%;
+height: 100%;
+display: flex;
+flex-direction: column;
+}
+.servers-room{
+width: 100%;
+height: 35%;
+}
+.couloir2{
+width: 100%;
+height: 31%;
+}
+.stuff-room{
+width: 100%;
+height: 34%;
+}
+.security-room{
+width: 100%;
+height: 35%;
+}
+.couloir3{
+width: 100%;
+height: 31%;
+}
+.vault{
+width: 100%;
+height: 35%;
+}
+
+/* modal formulaire */
+.modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    background: #00000019;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cache {
+    display: none;
+}
+.modal_container {
+    width: 30%;
+    height: 38vw;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    position: relative;
+    overflow-y: scroll;
+}
+.close_x {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.8rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.labeles{
+    font-size: 1rem;
+    color: #777;
+}
+.inputs {
+    width: 100%;
+    border-radius: 0.5rem;
+    height: 2rem;
+    border: 1px solid #b8b6b6;
+}
+.inputs:hover {
+    border: 1px solid #832a2a;
+}
+#worker_formulaire{
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.photo_show img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 0.2rem solid #dfdef1;
+}
+.btn_ajouter_exp{
+    background: #f39c12;
+    width: 50%;
+    height: 2rem;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.bttn_ajouter_worker{
+    background: #3498db;
+    border: none;
+    color: white;
+    width: 50%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.bttn_ajouter_worker{
+    align-self: flex-end;
+}
+
+.exp_container{
+    width: 100%;
+    border: 0.1rem solid #77777793;
+    border-radius: 0.5rem;
+    background-color: #ebecfd;
+    padding: 1.1rem;
+    display: flex; 
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal_select_container{
+    width: 30%;
+    height: 90%;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    border-radius: 0.5rem;
+    padding: 1% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+}
+.modal_select_container h2{
+align-self: flex-start;
+margin-bottom: 0.5rem;
+}
+.employee-card_afficher {
+    display: flex;
+    align-items: center;
+    width: 25vw;
+    gap: 2rem;
+    background-color: #f1edfc;
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px #00000029;
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+.employee-card_afficher:active {
+    cursor: grabbing;
+}
+.employee-card_afficher:hover {
+    transform: translateY(-3px);
+    border: 1px solid #832a2a;
+}
+.btns_assign_close{
+    padding-top: 1.5rem;
+    width: 100%;
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+.btn_close{
+width: 45%;
+height: 2rem;
+font-size: 1rem;
+background-color: #0059ff;
+border: none;
+border-radius: 0.4rem;
+color: #ffffff;
+font-weight: bold;
+cursor: pointer;
+}
+.btn_assign{
+width: 45%;
+height: 2rem;
+font-size: 1rem;
+background-color: #f31212;
+border: none;
+border-radius: 0.4rem;
+color: #ffffff;
+font-weight: bold;
+cursor: pointer;
+}
+.btn_assign:hover {
+    transform: translateY(-2px);
+    border: 1px solid #000000;
+    transition: transform 0.2s ease;
+}
+.btn_close:hover {
+    transform: translateY(-2px);
+    border: 1px solid #000000;
+    transition: transform 0.2s ease;
+}
+/* ---------------- recetion small div ------------------ */
+.reception_small_container{
+
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    align-content: center;
+
+}
+.reception_small_container2, .reception_small_container1{
+width: 35%;
+height: auto;
+display: flex;
+flex-direction: column;
+gap: 0.4rem;
+justify-content: center;
+}
+.employee-photo-ajoutee{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0.1rem solid #dfdef1;
+}
+.employee-name-ajoutee {
+    font-size: 0.63rem;
+    font-weight: bold;
+}
+.btn-remove:hover {
+    transform: translateY(-2px);
+    border: 1px solid #000000;
+    transition: transform 0.2s ease;
+}
+.employee-card-ajoutee:hover {
+    transform: translateY(-2px);
+    border: 1px solid #000000;
+    transition: transform 0.2s ease;
+}
+.employee-role-ajoutee {
+    font-size: 0.5rem;
+    margin: 3px 0 10px;
+    color: #777;
+}
+.employee-card-ajoutee{
+background-color: #ffffff;
+display: flex;
+height: 2.7rem;
+padding: 4px;
+border-radius: 0.5rem;
+gap: 0.5rem;
+cursor: pointer;
+cursor: grab;
+}
+.btn-remove{
+    align-self: flex-end;
+    align-self: center;
+    width: 18%;
+    height: 45%;
+    background-color: #ffc400;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+.reception_small-arrange{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: 0.5rem;
+    gap: 0.2rem; 
+}
+.btn_add_inscreen{
+    width: 2rem;
+    height: 1rem;
+    background-color: #189d32;
+    border: none;
+    align-self: center;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+}
+/* ---------------- recetion small div ------------------ */
+.reception-grand{
+
+}
+.reception_grand-arrange{
+    width: 100%;
+    height: 100%;
+}
