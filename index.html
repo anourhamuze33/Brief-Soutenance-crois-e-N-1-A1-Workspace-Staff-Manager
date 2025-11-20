@@ -9,10 +9,9 @@
 
 </head>
 
-<body>
+<body class="body">
     <aside class="sidebar">
         <h2>Unassigned Staff</h2>
-
         <div id="staff_list" class="staff_list">
             <!-- js ici ajouter un employee -->
             <div class="employee-card">
@@ -25,10 +24,8 @@
             </div>
             <!-- js stop ici ajouter un employee -->
 
-
-
         </div>
-        <button id="btn_ajout_employees" class="btn_ajout-employees">+ Add New Worker</button>
+        <button id="btn_ajout_employees" class="btn_ajout-employees" data-select="add">+ Add New Worker</button>
 
     </aside>
 
@@ -36,11 +33,11 @@
         <div id="sections_container" class="sections-container">
             <div class="reception_conferance">
                 <div id="conferance" class="conferance">
-                    <div id="conferance_arrange" class="conferance_arrange">
+                    <div id="conferance_arrange" class="conferance_arrange" data-max-workers="6" data-role="conferance">
                         <div class="conferance_container" id="conferance_container">
                             <div class="conferance_container1" id="conferance_container1">
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -51,7 +48,7 @@
                                 <!-- js stop ici ajouter un employee -->
 
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -62,7 +59,7 @@
                                 <!-- js stop ici ajouter un employee -->
 
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -75,8 +72,18 @@
 
 
                             <div class="conferance_container2" id="conferance_container2">
+                                 <!-- js ici ajouter un employee -->
+                                <div class="employee_card_ajoutee" data-select="selection">
+                                    <img src="hamza anouar.png" class="employee_photo_ajoutee" />
+                                    <div class="employee_info_ajoutee">
+                                        <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
+                                        <p class="employee_role_ajoutee">Technicien IT</p>
+                                    </div>
+                                    <button id="btn_remove" class="btn-remove">&times;</button>
+                                </div>
+                                <!-- js stop ici ajouter un employee -->
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -87,7 +94,7 @@
                                 <!-- js stop ici ajouter un employee -->
 
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -98,16 +105,16 @@
                                 <!-- js stop ici ajouter un employee -->
                             </div>
                         </div>
-                        <button id="btn-add_inscreen" class="btn_add_inscreen">+</button>
+                        <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="conferance_arrange">+</button>
                     </div>
                 </div>
 
-                <div id="reception" class="reception">
-                    <div id="reception_arrange" class="reception_arrange">
+                <div id="reception" class="reception" data-max-workers="10">
+                    <div id="reception_arrange" class="reception_arrange" data-role="Réceptionniste">
                         <div class="reception_container" id="reception_container">
                             <div class="reception_container1" id="reception_container1">
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -117,7 +124,7 @@
                                 </div>
                                 <!-- js stop ici ajouter un employee -->
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -127,7 +134,7 @@
                                 </div>
                                 <!-- js stop ici ajouter un employee -->
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -137,17 +144,7 @@
                                 </div>
                                 <!-- js stop ici ajouter un employee -->
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
-                                    <img src="hamza anouar.png" class="employee_photo_ajoutee" />
-                                    <div class="employee_info_ajoutee">
-                                        <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
-                                        <p class="employee_role_ajoutee">Technicien IT</p>
-                                    </div>
-                                    <button id="btn_remove" class="btn-remove">&times;</button>
-                                </div>
-                                <!-- js stop ici ajouter un employee -->
-                                <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -160,7 +157,7 @@
 
                             <div class="reception_container2" id="reception_container2">
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -170,7 +167,7 @@
                                 </div>
                                 <!-- js stop ici ajouter un employee -->
                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee">
+                                <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -181,7 +178,7 @@
                                 <!-- js stop ici ajouter un employee -->
                             </div>
                         </div>
-                        <button id="btn-add_inscreen" class="btn_add_inscreen">+</button>
+                        <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="reception_arrange">+</button>
                     </div>
 
 
@@ -194,12 +191,12 @@
             <!-- la parties des roomes -->
             <div class="rooms">
                 <div class="rooms1">
-                    <div id="servers" class="servers">
-                        <div id="servers_arrange" class="servers_arrange">
+                    <div id="servers" class="servers" >
+                        <div id="servers_arrange" class="servers_arrange" data-max-workers="3" data-role="servers">
                             <div class="servers_container" id="servers_container">
                                 <div class="servers_container1" id="servers_container1">
                                     <!-- js ici ajouter un employee -->
-                                    <div class="employee_card_ajoutee">
+                                    <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                         <div class="employee_info_ajoutee">
                                             <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -209,7 +206,7 @@
                                     </div>
                                     <!-- js stop ici ajouter un employee -->
                                     <!-- js ici ajouter un employee -->
-                                    <div class="employee_card_ajoutee">
+                                    <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                         <div class="employee_info_ajoutee">
                                             <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -219,7 +216,7 @@
                                     </div>
                                     <!-- js stop ici ajouter un employee -->
                                     <!-- js ici ajouter un employee -->
-                                    <div class="employee_card_ajoutee">
+                                    <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                         <div class="employee_info_ajoutee">
                                             <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -230,18 +227,18 @@
                                     <!-- js stop ici ajouter un employee -->
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="servers_arrange">+</button>
                         </div>
                     </div>
 
                     <div class="couloir2"></div>
 
-                    <div id="staff" class="servers">
+                    <div id="staff" class="servers" data-max-workers="3" data-role="staff">
                         <div id="staff_arrange" class="servers_arrange">
                             <div class="servers_container" id="staff_container">
                                 <div class="servers_container1" id="staff_container1">
                                     <!-- js ici ajouter un employee -->
-                                    <div class="employee_card_ajoutee">
+                                    <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                         <div class="employee_info_ajoutee">
                                             <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -252,18 +249,18 @@
                                     <!-- js stop ici ajouter un employee -->
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="staff_arrange">+</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="rooms2">
                     <div id="security" class="servers">
-                        <div id="security_arrange" class="servers_arrange">
+                        <div id="security_arrange" class="servers_arrange" data-max-workers="3" data-role="security">
                             <div class="servers_container" id="security_container">
                                 <div class="servers_container1" id="security_container1">
                                     <!-- js ici ajouter un employee -->
-                                    <div class="employee_card_ajoutee">
+                                    <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                         <div class="employee_info_ajoutee">
                                             <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -273,7 +270,7 @@
                                     </div>
                                     <!-- js stop ici ajouter un employee -->
                                     <!-- js ici ajouter un employee -->
-                                    <div class="employee_card_ajoutee">
+                                    <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                         <div class="employee_info_ajoutee">
                                             <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -284,7 +281,7 @@
                                     <!-- js stop ici ajouter un employee -->
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="security_arrange">+</button>
                         </div>
 
                     </div>
@@ -292,11 +289,11 @@
                     <div class="couloir3"></div>
 
                     <div id="vault" class="servers">
-                        <div id="vault_arrange" class="servers_arrange">
+                        <div id="vault_arrange" class="servers_arrange" data-max-workers="3" data-role="vault">
                             <div class="servers_container" id="vault_container">
                                 <div class="servers_container1" id="vault_container1">
                                     <!-- js ici ajouter un employee -->
-                                    <div class="employee_card_ajoutee">
+                                    <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                         <div class="employee_info_ajoutee">
                                             <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -307,7 +304,7 @@
                                     <!-- js stop ici ajouter un employee -->
                                     <!-- js stop ici ajouter un employee -->
                                     <!-- js ici ajouter un employee -->
-                                    <div class="employee_card_ajoutee">
+                                    <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
                                         <div class="employee_info_ajoutee">
                                             <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
@@ -318,7 +315,7 @@
                                     <!-- js stop ici ajouter un employee -->
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="vault_arrange">+</button>
                         </div>
 
                     </div>
@@ -331,9 +328,9 @@
 
 
     <!-- modal_formulaire add worker -->
-    <div id="modal" class="modal cache">
+    <div id="form_modal" class="modal cache">
         <div class="modal_container">
-            <span id="close_modal" class="close_x">&times;</span>
+            <span id="close_modal" class="close_x" data-select="close">&times;</span>
             <h2>Add New Worker</h2>
 
             <form id="worker_formulaire" class="form">
@@ -367,23 +364,24 @@
 
 
                 <button type="button" id="ajouter-exp" class="btn_ajouter_exp">+ Add Experience</button>
-                <!-- <div id="exp_div" class="exp_div">
+                <div class="experiences">
+                <div id="exp_div" class="exp_div cache">
                     <h3>Expériences:</h3>
                 </div>
-                <div class="exp_container" id="exp_container">
+                <!-- <div class="exp_container" id="exp_container">
 
-                     experiece ajout in js the following 
                     <label class="labeles">Campany</label>
-                    <input type="email" id="email" class="inputs" required />
+                    <input type="text" id="email" class="inputs" required />
 
                     <label class="labeles">Role</label>
-                    <input type="tel" id="phone" class="inputs" required />
+                    <input type="text" id="phone" class="inputs" required />
                     <label class="labeles">From</label>
-                    <input type="email" id="email" class="inputs" placeholder="   dd/mm/aa" required />
+                    <input type="text" id="email" class="inputs" placeholder="   dd/mm/aa" required />
 
                     <label class="labeles">To</label>
-                    <input type="tel" id="phone" class="inputs" placeholder="   dd/mm/aa" required />
+                    <input type="text" id="phone" class="inputs" placeholder="   dd/mm/aa" required />
                 </div> -->
+                </div>
 
                 <button type="submit" class="bttn_ajouter_worker">Add Worker</button>
             </form>
@@ -395,12 +393,13 @@
 
 
     <!-- Modal selection d'un worker -->
-    <div class="modal cache" id="modal">
+    <div class="modal cache" id="modal_assign">
         <div class="modal_select_container" id="modal_select_container">
             <h2>Select worker to assign</h2>
+            <div class="modal_arrang">
             <div>
                 <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher">
+                <div class="employee-card_afficher" data-id="1">
                     <img src="hamza anouar.png" class="employee-photo" />
                     <div class="employee-info">
                         <h4 class="employee-name">Hamza Anouar</h4>
@@ -414,7 +413,7 @@
 
             <div>
                 <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher">
+                <div class="employee-card_afficher" data-id="2">
                     <img src="hamza anouar.png" class="employee-photo" />
                     <div class="employee-info">
                         <h4 class="employee-name">Hamza Anouar</h4>
@@ -427,30 +426,31 @@
             </div>
             <div>
                 <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher">
+                <div class="employee-card_afficher" data-id="3">
                     <img src="hamza anouar.png" class="employee-photo" />
                     <div class="employee-info">
-                        <h4 class="employee-name">Hamza Anouar</h4>
+                        <h4 class="employee-name">amza Anouar</h4>
                         <p class="employee-role">Technicien IT</p>
                         <button id="btn_edit" class="btn-edit">Edit</button>
                     </div>
                 </div>
                 <!-- js stop ici affichage un employee -->
 
-            </div>
-            <div class="btns_assign_close" id="btns_assign_close">
-                <button class="btn_close" id="btn_close">Assign</button>
-                <button class="btn_assign" id="btn_assign">Close</button>
             </div>
         </div>
+         <div class="btns_assign_close" id="btns_assign_close">
+                <button class="btn_close" id="btn_close">Assign</button>
+                <button class="btn_assign" id="btn_assign" data-select="close">Close</button>
+         </div>
+         </div>
     </div>
 
 
 
       <!-- Modal selection d'un worker -->
-    <div class="modal cache" id="modal">
+    <div class="modal cache" id="modal_info">
         <div class="modal_info_container" id="modal_info_container">
-            <span id="close_modal" class="close_modal">&times;</span>
+            <span id="close_modal" class="close_modal" data-select="close">&times;</span>
                 <div class="employee-card_infos">
                     <img src="hamza anouar.png" class="employee-photo_infos" />
                     <div class="employee-info_infos">
