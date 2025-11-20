@@ -1,30 +1,83 @@
 let workers = [];
 
     const modal_assign = document.getElementById("modal_assign");
-    const modal_info = document.getElementById("modal_info");
     const form_modal = document.getElementById("form_modal");
+    
 
-
-document.querySelector(".body").addEventListener("click", modalOpen);
+const body = document.querySelector(".body");
+body.addEventListener("click", modalOpen);
 function modalOpen(event) {
     const select = event.target.closest("[data-select]");
+    
     if (!select) {
         return;
     }
     const data_select = select.dataset.select;
-
-
-
     switch (data_select) {
         case "add":
             form_modal.classList.remove("cache");
             break;
         case "selection":
-            modal_info.classList.remove("cache");
+            const worker_id = event.target.closest("[data-id]").dataset.id;
+            const worker = workers.find(worker=> worker.id===Number(worker_id));
+            const room_actuelle = event.target.closest("[data-id]").parentElement.parentElement.parentElement.dataset.room;
+            console.log(room_actuelle)
+ const modal = document.createElement("div");
+ modal.innerHTML=`
+   <!-- Modal selection d'un worker -->
+    <div class="modal" id="modal_info">
+        <div class="modal_info_container" id="modal_info_container">
+                <span id="close_modal" class="close_modal" data-select="close">&times;</span>
+                <div class="employee-card_infos">
+                    <img src="${worker.img}" class="employee-photo_infos" />
+                    <div class="employee-info_infos">
+                        <h2>${worker.name}</h2>
+                        <p class="employee-role_infos">${worker.role}</p>
+                        <button id="btn_edit" class="btn-edit">Edit</button>
+                    </div>
+                </div> 
+                <div class="employee-card_infos email_location">
+                    <div class="employee-info_infos email_location1">
+                        <h3>Email: <span class="employee-role_info">${worker.email}</span></h3>
+                        <h3>Phone: <span class="employee-role_info">${worker.phone}</span></h3>
+                        <h3>Current location: <span class="employee-role_info">${room_actuelle}</span></h3>
+
+                        <!-- <button id="btn_edit" class="btn-edit">Edit</button> -->
+                    </div>
+                </div>
+                <h3>Work experiences</h3>
+                <div class="exp_infos">
+                </div>
+
+        </div>
+    </div>
+
+ `;
+body.appendChild(modal);
+const exp_infos = body.querySelector(".exp_infos");
+    worker.exp.forEach(exp=>{ 
+    const div = document.createElement("div");
+    div.innerHTML=`
+                    <div class="employee-card_infos email_location exp">
+                    <div class="employee-info_infos email_location1">
+                        <h3>${exp.company}</h3>
+                        <h3>Role: <span class="employee-role_info">${exp.company}</span></h3>
+                        <h3>Periode: <span class="employee-role_info">11/12/2024 - 13/10/2025</span></h3>
+                        <!-- <button id="btn_edit" class="btn-edit">Edit</button> -->
+                    </div>
+    `
+    exp_infos.appendChild(div);
+    });
+
             break;
         case "close":
+            const model = document.querySelector("#modal_info");
+            if(model!==null){
+                model.querySelector("[data-select='close']").addEventListener("click", () => {
+                model.remove();
+                   });
+            }
             modal_assign.classList.add("cache");
-            modal_info.classList.add("cache");
             form_modal.classList.add("cache");
             break;
     }
@@ -175,7 +228,7 @@ function add_exp(){
         exp_titl.classList.add("cache");
     }
   
-};
+}
 
 
 function validate_experiences() {
@@ -208,51 +261,57 @@ function validate_experiences() {
     });
     return [valid, exps];
 }
-function room_select(){
+
+
+
+
+
+
+
+
+
+
+
+
 const add_btns = document.querySelectorAll("[data-salle]");
 add_btns.forEach(btn=>{
 btn.addEventListener("click", (e)=>{
+    room_select()
+    function room_select(){
     const salle= e.currentTarget.dataset.salle;
     let sale_div=document.getElementById(salle);
     let max_workers=parseInt(sale_div.dataset.maxWorkers);
-    let workerkers_in_the_room= sale_div.querySelectorAll('.employee_card_ajoutee');
-        if(max_workers<=workerkers_in_the_room.length){
-            alert("the room is full remove a worker to add");
-            return;
-        }
     modal_assign.classList.remove("cache");
-    // let modal_arrang = modal_assign.querySelector('.modal_arrang');
-    // modal_arrang.innerHTML="";
-  let rome_role = sale_div.dataset.role;
-  
+    let rome_role = sale_div.dataset.role;
   switch(salle){
      case "conferance_arrange":
-        add_conferance();
+        worker_select(sale_div, rome_role, max_workers,1);
      break;
      case "reception_arrange":
-        worker_select(sale_div, rome_role);
+        worker_select(sale_div, rome_role, max_workers, 2);
      break;
      case "servers_arrange":
-        add_servers();
+        worker_select(sale_div, rome_role, max_workers,3);
      break;
-     case "staf_arrangef":
-        add_staff();
+     case "staff_arrange":
+        worker_select(sale_div, rome_role, max_workers,4);
      break;
      case "security_arrange":
-        add_security();
+        worker_select(sale_div, rome_role, max_workers, 5);
      break;
-     case "vault_arrange":
-        add_vault();
+     case "archives_arrange":
+     worker_select(sale_div, rome_role, max_workers, 6);
      break;
     }
+}
 })
 });
 
-}
-room_select();
 const modal_select = document.querySelector(".modal_select_container");
+let current_worker = 0;
 
-function worker_select(sale_div, salle_role){
+
+function worker_select(sale_div, salle_role, max_workers, index){
     const divs = modal_select.querySelectorAll(".employee-card_afficher");
     let worker_id;
     let current_card;
@@ -261,58 +320,68 @@ function worker_select(sale_div, salle_role){
             div.style.border="none";
             div.style.border=" 2px solid blue";
             worker_id = div.dataset.id;
+            current_worker = workers.find(worker=> Number(worker.id)===Number(worker_id));
             current_card = e.currentTarget;
-            add_reception(sale_div, salle_role, worker_id, current_card)
+                add_selon_role(sale_div, salle_role, current_worker, current_card, max_workers, index);
         });
     });
 }
 
-const assign_btn =document.querySelector("#btn_close");
-function add_reception(sale_div, salle_role, worker_id, current_card) {
-    console.log(sale_div, salle_role, worker_id, current_card)
-    
-    const current_worker = workers.find(worker=> Number(worker.id)===Number(worker_id));
-    
-const receps = [document.querySelector(".reception_container1"), document.querySelector(".reception_container2")];
-let recep_choix=receps[0];
-for (let i = 0; i < receps.length; i++) {
-  const varia = receps[i].querySelectorAll(".employee_card_ajoutee");
-
-  if (varia.length == 5 && i==0) {
-    recep_choix = receps[i+1];
-  }
+const assign_btn = document.querySelector("#btn_close");
+function add_selon_role(sale_div, salle_role, current_worker, current_card, max_workers, index) {
+    let salle_specifique_roles = salle_role;
+    assign_btn.onclick =  (e)=>{
+        let recep_choix=null;
+        let div_a_Afficher=null;
+        let receps= [];
+    const max_sale = sale_div.querySelectorAll(".employee_card_ajoutee").length;
+    if (max_sale>= max_workers) {
+        alert("this salle is full");
+        return;
+    }
+switch(index){
+    case 1:
+     receps = [document.querySelector(".conferance_container1"), document.querySelector(".conferance_container2")];
+     div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
+     recep_choix = (div_a_Afficher<3) ? receps[0] : receps[1];
+     salle_specifique_roles= ["Manager", "Nettoyage", salle_role]
+    break;
+    case 2:
+     receps = [document.querySelector(".reception_container1"), document.querySelector(".reception_container2")];
+     div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
+     recep_choix = (div_a_Afficher<5) ? receps[0] : receps[1];
+     salle_specifique_roles= ["Manager", "Nettoyage", salle_role]
+    break;
+    case 3:
+     receps = [document.querySelector("#servers_container1")];
+     div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
+     recep_choix = receps[0];
+     salle_specifique_roles= ["Manager", "Nettoyage", salle_role]
+    break;
+    case 4:
+     receps = [document.querySelector("#staff_container1")];
+     div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
+     recep_choix = receps[0];
+     salle_specifique_roles= ["Manager", "Nettoyage", salle_role]
+    break;
+    case 5:
+    receps = [document.querySelector("#security_container1")];
+     div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
+     recep_choix = receps[0];
+     salle_specifique_roles= ["Manager", "Nettoyage", salle_role]
+    break;
+    case 6:
+     receps = [document.querySelector("#archives_container1")];
+     div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
+     recep_choix = receps[0];
+     salle_specifique_roles= ["Manager", salle_role]
+    break;
 }
-
-// if(recep2_element.length>=5){
-//     recep_choix=recep1;
-// }
-// if(recep1_element.length>=5){
-//     recep_choix=recep2;
-// }
-for(let i=1;i<=2;i++){
-   eval(`var recep${i} = document.querySelector(".reception_container${i}")`); 
-   eval(`var recep${i}_element = recep${i}.querySelectorAll(".employee_card_ajoutee")`);
-   eval(` var varia = recep${i}_element`)
-   
-   console.log("varia: ====",varia);
-   
-   if(varia.length>=5 && i == 1){
-    recep_choix=`recep${i+1}`;
-    alert("this part is f");
-}
-   if(varia.length>=5 && i == 2){
-    recep_choix=`recep${i-1}`;
-}
-
-
-// }
-
-    if (current_worker.role=== salle_role) {
-    assign_btn.addEventListener("click", (e)=>{
-        console.log(recep_choix)
+    for(role of salle_specifique_roles){        
+   if (current_worker.role === role) {
         recep_choix.innerHTML += `
              <div>
-                                <div class="employee_card_ajoutee" data-select="selection">
+                                <div class="employee_card_ajoutee" data-select="selection" data-id="${current_worker.id}">
                                     <img src="${current_worker.img}" class="employee_photo_ajoutee" />
                                     <div class="employee_info_ajoutee">
                                         <h4 class="employee_name_ajoutee">${current_worker.name}</h4>
@@ -321,6 +390,16 @@ for(let i=1;i<=2;i++){
                                     <button id="btn_remove" class="btn-remove">&times;</button>
                                 </div>
     `
-})
-   }
+    return
+} 
+ else {
+        if(salle_specifique_roles === salle_role){
+            alert("cet employee ne peut pas etre ici");
+        }
+        
+     }
+
+    }
+ }
+
 }

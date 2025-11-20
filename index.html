@@ -33,19 +33,9 @@
         <div id="sections_container" class="sections-container">
             <div class="reception_conferance">
                 <div id="conferance" class="conferance">
-                    <div id="conferance_arrange" class="conferance_arrange" data-max-workers="6" data-role="conferance">
-                        <div class="conferance_container" id="conferance_container">
-                            <div class="conferance_container1" id="conferance_container1">
-                                <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee" data-select="selection">
-                                    <img src="hamza anouar.png" class="employee_photo_ajoutee" />
-                                    <div class="employee_info_ajoutee">
-                                        <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
-                                        <p class="employee_role_ajoutee">Technicien IT</p>
-                                    </div>
-                                    <button id="btn_remove" class="btn-remove">&times;</button>
-                                </div>
-                                <!-- js stop ici ajouter un employee -->
+                    <div id="conferance_arrange" class="conferance_arrange" data-max-workers="6" data-role="Employé">
+                        <div class="conferance_container" id="conferance_container" data-room="conferance room">
+                            <div class="conferance_container1" id="conferance_container1" >
 
                                 <!-- js ici ajouter un employee -->
                                 <div class="employee_card_ajoutee" data-select="selection">
@@ -72,16 +62,6 @@
 
 
                             <div class="conferance_container2" id="conferance_container2">
-                                 <!-- js ici ajouter un employee -->
-                                <div class="employee_card_ajoutee" data-select="selection">
-                                    <img src="hamza anouar.png" class="employee_photo_ajoutee" />
-                                    <div class="employee_info_ajoutee">
-                                        <h4 class="employee_name_ajoutee">Hamza Anouar</h4>
-                                        <p class="employee_role_ajoutee">Technicien IT</p>
-                                    </div>
-                                    <button id="btn_remove" class="btn-remove">&times;</button>
-                                </div>
-                                <!-- js stop ici ajouter un employee -->
                                 <!-- js ici ajouter un employee -->
                                 <div class="employee_card_ajoutee" data-select="selection">
                                     <img src="hamza anouar.png" class="employee_photo_ajoutee" />
@@ -109,9 +89,9 @@
                     </div>
                 </div>
 
-                <div id="reception" class="reception" data-max-workers="10">
-                    <div id="reception_arrange" class="reception_arrange" data-role="Réceptionniste">
-                        <div class="reception_container" id="reception_container">
+                <div id="reception" class="reception">
+                    <div id="reception_arrange" class="reception_arrange" data-role="Réceptionniste" data-max-workers="10">
+                        <div class="reception_container" id="reception_container" data-room="reception room">
                             <div class="reception_container1" id="reception_container1">
                                 <!-- js ici ajouter un employee -->
                                 <div class="employee_card_ajoutee" data-select="selection">
@@ -192,8 +172,8 @@
             <div class="rooms">
                 <div class="rooms1">
                     <div id="servers" class="servers" >
-                        <div id="servers_arrange" class="servers_arrange" data-max-workers="3" data-role="servers">
-                            <div class="servers_container" id="servers_container">
+                        <div id="servers_arrange" class="servers_arrange" data-max-workers="3" data-role="Technicien IT">
+                            <div class="servers_container" id="servers_container" data-room="servers room">
                                 <div class="servers_container1" id="servers_container1">
                                     <!-- js ici ajouter un employee -->
                                     <div class="employee_card_ajoutee" data-select="selection">
@@ -233,9 +213,9 @@
 
                     <div class="couloir2"></div>
 
-                    <div id="staff" class="servers" data-max-workers="3" data-role="staff">
-                        <div id="staff_arrange" class="servers_arrange">
-                            <div class="servers_container" id="staff_container">
+                    <div id="staff" class="servers">
+                        <div id="staff_arrange" class="servers_arrange" data-max-workers="3" data-role="Manager">
+                            <div class="servers_container" id="staff_container" data-room="staff room">
                                 <div class="servers_container1" id="staff_container1">
                                     <!-- js ici ajouter un employee -->
                                     <div class="employee_card_ajoutee" data-select="selection">
@@ -256,8 +236,8 @@
 
                 <div class="rooms2">
                     <div id="security" class="servers">
-                        <div id="security_arrange" class="servers_arrange" data-max-workers="3" data-role="security">
-                            <div class="servers_container" id="security_container">
+                        <div id="security_arrange" class="servers_arrange" data-max-workers="3" data-role="Agent de sécurité">
+                            <div class="servers_container" id="security_container" data-room="security room">
                                 <div class="servers_container1" id="security_container1">
                                     <!-- js ici ajouter un employee -->
                                     <div class="employee_card_ajoutee" data-select="selection">
@@ -288,10 +268,10 @@
 
                     <div class="couloir3"></div>
 
-                    <div id="vault" class="servers">
-                        <div id="vault_arrange" class="servers_arrange" data-max-workers="3" data-role="vault">
-                            <div class="servers_container" id="vault_container">
-                                <div class="servers_container1" id="vault_container1">
+                    <div id="archives" class="servers">
+                        <div id="archives_arrange" class="servers_arrange" data-max-workers="3" data-role="Nettoyage">
+                            <div class="servers_container" id="archives_container" data-room="archives room">
+                                <div class="servers_container1" id="archives_container1">
                                     <!-- js ici ajouter un employee -->
                                     <div class="employee_card_ajoutee" data-select="selection">
                                         <img src="hamza anouar.png" class="employee_photo_ajoutee" />
@@ -315,7 +295,7 @@
                                     <!-- js stop ici ajouter un employee -->
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="vault_arrange">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="archives_arrange">+</button>
                         </div>
 
                     </div>
@@ -341,12 +321,12 @@
                 <label class="labeles">Role</label>
                 <select id="role" class="inputs" required>
                     <option value=""> Select Role </option>
-                    <option>Réceptionniste</option>
-                    <option>Technicien IT</option>
-                    <option>Agent de sécurité</option>
-                    <option>Manager</option>
-                    <option>Nettoyage</option>
-                    <option>Employé</option>
+                    <option value="Réceptionnist">Réceptionnist</option>
+                    <option value="Technicien IT">Technicien IT</option>
+                    <option value="Agent de sécurité">Agent de sécurité</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Nettoyage">Nettoyage</option>
+                    <option value="Employé">Employé</option>
                 </select>
 
                 <label class="labeles">Photo (URL)</label>
@@ -399,7 +379,7 @@
             <div class="modal_arrang">
             <div>
                 <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher" data-id="1">
+                <div class="employee-card_afficher">
                     <img src="hamza anouar.png" class="employee-photo" />
                     <div class="employee-info">
                         <h4 class="employee-name">Hamza Anouar</h4>
@@ -413,7 +393,7 @@
 
             <div>
                 <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher" data-id="2">
+                <div class="employee-card_afficher">
                     <img src="hamza anouar.png" class="employee-photo" />
                     <div class="employee-info">
                         <h4 class="employee-name">Hamza Anouar</h4>
@@ -426,7 +406,7 @@
             </div>
             <div>
                 <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher" data-id="3">
+                <div class="employee-card_afficher">
                     <img src="hamza anouar.png" class="employee-photo" />
                     <div class="employee-info">
                         <h4 class="employee-name">amza Anouar</h4>
@@ -447,49 +427,7 @@
 
 
 
-      <!-- Modal selection d'un worker -->
-    <div class="modal cache" id="modal_info">
-        <div class="modal_info_container" id="modal_info_container">
-            <span id="close_modal" class="close_modal" data-select="close">&times;</span>
-                <div class="employee-card_infos">
-                    <img src="hamza anouar.png" class="employee-photo_infos" />
-                    <div class="employee-info_infos">
-                        <h2>Hamza Anouar</h2>
-                        <p class="employee-role_infos">Technicien IT</p>
-                        <button id="btn_edit" class="btn-edit">Edit</button>
-                    </div>
-                </div> 
-                <div class="employee-card_infos email_location">
-                    <div class="employee-info_infos email_location1">
-                        <h3>Email: <span class="employee-role_info">anourhamuze@gmail.com</span></h3>
-                        <h3>Phone: <span class="employee-role_info">+212 687 132 488</span></h3>
-                        <h3>Current location: <span class="employee-role_info">Security room</span></h3>
-
-                        <!-- <button id="btn_edit" class="btn-edit">Edit</button> -->
-                    </div>
-                </div>
-                <h3>Work experiences</h3>
-                <div class="exp_infos">
-                                    <div class="employee-card_infos email_location exp">
-                    <div class="employee-info_infos email_location1">
-                        <h3>Youcode</h3>
-                        <h3>Role: <span class="employee-role_info">Technicien IT</span></h3>
-                        <h3>Periode: <span class="employee-role_info">11/12/2024 - 13/10/2025</span></h3>
-                        <!-- <button id="btn_edit" class="btn-edit">Edit</button> -->
-                    </div>
-                    
-                </div>
-                <div class="employee-card_infos email_location exp">
-                    <div class="employee-info_infos email_location1">
-                        <h3>UX4mation</h3>
-                        <h3>Role: <span class="employee-role_info">Technicien IT</span></h3>
-                        <h3>Periode: <span class="employee-role_info">11/12/2024 - 13/10/2025</span></h3>
-                    </div>
-                </div>
-
-        </div>
-    </div>
-
+    
 
 
 
