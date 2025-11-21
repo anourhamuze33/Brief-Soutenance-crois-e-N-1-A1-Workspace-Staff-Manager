@@ -234,10 +234,10 @@ function add_exp() {
                     <label class="labeles">Role</label>
                     <input type="text" id="phone" class="inputs exp_input" required />
                     <label class="labeles">From</label>
-                    <input type="text" id="email" class="inputs exp_input" placeholder="   dd/mm/aa" required />
+                    <input type="date" id="email" class="inputs exp_input" required />
 
                     <label class="labeles">To</label>
-                    <input type="text" id="phone" class="inputs exp_input" placeholder="   dd/mm/aa" required />
+                    <input type="date" id="phone" class="inputs exp_input" required />
                     <button type="button" id="ajouter-exp" class="btn_assign remove_Exp">remove</button>
                 </div>
 
@@ -260,7 +260,7 @@ function validate_experiences() {
     const exp_cont = document.querySelectorAll(".exp_container");
     let valid = true;
 
-    const periode_regex = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[0-2])[\/\-]\d{2,4}$/;
+    const periode_regex = /^\d{4}-\d{2}-\d{2}$/;
     const text_regex = /^[A-Za-z0-9À-ÿ ,.'!?-]{2,50}$/;
     let exps = [];
     exp_cont.forEach(exp => {
@@ -270,9 +270,14 @@ function validate_experiences() {
         const from = inputs[2].value.trim();
         const to = inputs[3].value.trim();
 
+        const date_comp = comparedates(inputs[2].value, inputs[3].value);
+        
+        if(!date_comp){
+            valid = false;
+        }
         if (!text_regex.test(company) || !text_regex.test(role) || !periode_regex.test(from) || !periode_regex.test(to)) {
             valid = false;
-            exp.style.border = "1.5px solid red";
+            exp.style.border = "1px solid red";
         }
         if (valid) {
             const exp_infos = {
@@ -286,7 +291,20 @@ function validate_experiences() {
     });
     return [valid, exps];
 }
+function comparedates(from, to){
+    console.log(from, to)
+let date1 = new Date(from).getTime();
+let date2 = new Date(to).getTime();
+console.log(date2, date1);
 
+if(date2<=date1){
+    return false;
+    alert("the date of start canoot be bigger than the one of end the exp")
+}
+else{
+    return true;
+}
+}
 
 
 
