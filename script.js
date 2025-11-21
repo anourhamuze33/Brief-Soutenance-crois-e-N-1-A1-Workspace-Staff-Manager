@@ -299,7 +299,7 @@ console.log(date2, date1);
 
 if(date2<=date1){
     return false;
-    alert("the date of start canoot be bigger than the one of end the exp")
+    alert("the date of start canoot be more than the one of end the exp")
 }
 else{
     return true;
