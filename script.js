@@ -1,5 +1,5 @@
 let workers = [];
-let assigned_workers=[];
+let assigned_workers = [];
 const body = document.querySelector(".body")
 const modal_assign = document.getElementById("modal_assign");
 const form_modal = document.getElementById("form_modal");
@@ -7,7 +7,7 @@ const form_modal = document.getElementById("form_modal");
 
 const elements = document.querySelectorAll(".elements");
 
-elements.forEach(element=> {
+elements.forEach(element => {
     element.addEventListener("click", modal_Open);
 });
 
@@ -25,7 +25,7 @@ function modal_Open(event) {
         case "selection":
             const worker_id = event.target.closest("[data-id]").dataset.id;
             console.log(worker_id);
-            
+
             const worker = assigned_workers.find(worker => worker.id === Number(worker_id));
             const room_actuelle = event.target.closest("[data-id]").parentElement.parentElement.parentElement.dataset.room;
             console.log(room_actuelle)
@@ -59,9 +59,9 @@ function modal_Open(event) {
     </div>
 
  `;
-body.appendChild(modal);
-modal.querySelector(".elements").addEventListener("click", modal_Open);
-const exp_infos = body.querySelector(".exp_infos");
+            body.appendChild(modal);
+            modal.querySelector(".elements").addEventListener("click", modal_Open);
+            const exp_infos = body.querySelector(".exp_infos");
             worker.exp.forEach(exp => {
                 const div = document.createElement("div");
                 div.innerHTML = `
@@ -81,7 +81,7 @@ const exp_infos = body.querySelector(".exp_infos");
             const model = document.querySelector("#modal_info");
             if (model !== null) {
                 model.querySelector("[data-select='close']")
-                    model.remove();
+                model.remove();
             }
             modal_assign.classList.add("cache");
             form_modal.classList.add("cache");
@@ -90,26 +90,27 @@ const exp_infos = body.querySelector(".exp_infos");
 
 
         case "remove":
-        const btn = event.target.closest("[data-select='remove']");
-              const element_sup_id = btn.parentElement.dataset.id;
+            const btn = event.target.closest("[data-select='remove']");
+            const element_sup_id = btn.parentElement.dataset.id;
 
-              
-            const worker_sup = assigned_workers.find(assigned_worker=>assigned_worker.id === Number(element_sup_id));
-            const element_sup_index = assigned_workers.findIndex(assigned_worker=>assigned_worker.id===Number(element_sup_id));
-            
-             workers.push(worker_sup);
-             assigned_workers.splice(element_sup_index, 1);
-             btn.parentElement.remove();
-             affichage_workers_cards();
-             affichage_workers_cards_toAssign();
-        break;
+
+            const worker_sup = assigned_workers.find(assigned_worker => assigned_worker.id === Number(element_sup_id));
+            const element_sup_index = assigned_workers.findIndex(assigned_worker => assigned_worker.id === Number(element_sup_id));
+
+            workers.push(worker_sup);
+            assigned_workers.splice(element_sup_index, 1);
+            btn.parentElement.remove();
+            affichage_workers_cards();
+            affichage_workers_cards_toAssign();
+            salles_vides();
+            break;
     }
 }
 const workers_bar = document.querySelector(".staff_list")
 const inputs = document.querySelectorAll(".inputs");
 const photo_previw = document.querySelector("#show");
-inputs[2].addEventListener("change", (e)=>{
-photo_previw.setAttribute("src", inputs[2].value);
+inputs[2].addEventListener("change", (e) => {
+    photo_previw.setAttribute("src", inputs[2].value);
 });
 const formulaire = document.getElementById("worker_formulaire");
 let conteur = 0;
@@ -148,7 +149,16 @@ formulaire.addEventListener("submit", (e) => {
             alert("input of experiences s not valide.");
             return;
         }
+        const manager = workers.find(manager => manager.manager === true)
+        let manager_assigned=null;
+      if(assigned_workers.length>=1){
+           manager_assigned = assigned_workers.find(worker=> worker.manager===true)
 
+      }
+        if (manager || inputs[1].value === "Manager" && manager_assigned) {
+            alert("there is only one manager")
+            return;
+        }
         if (valide) {
             conteur++;
             const worker_infos = {
@@ -159,7 +169,13 @@ formulaire.addEventListener("submit", (e) => {
                 email: inputs[3].value,
                 phone: inputs[4].value,
                 exp: exps,
-                inRoom: false
+                manager: false
+            }
+            if (worker_infos.role === "Manager") {
+                worker_infos.manager = true;
+            }
+            else {
+                worker_infos.manager = false;
             }
             workers.push(worker_infos);
             //   exp_list.innerHTML = "";
@@ -188,6 +204,8 @@ function affichage_workers_cards() {
     formulaire.reset();
     photo_previw.removeAttribute("src");
     exp_container.innerHTML = "";
+
+
 }
 const assign_container = document.querySelector(".modal_arrang");
 
@@ -211,9 +229,6 @@ function affichage_workers_cards_toAssign() {
         assign_container.appendChild(worker_card);
     });
 }
-
-
-
 
 function add_exp() {
     let exp_conteur = 0;
@@ -271,8 +286,8 @@ function validate_experiences() {
         const to = inputs[3].value.trim();
 
         const date_comp = comparedates(inputs[2].value, inputs[3].value);
-        
-        if(!date_comp){
+
+        if (!date_comp) {
             valid = false;
         }
         if (!text_regex.test(company) || !text_regex.test(role) || !periode_regex.test(from) || !periode_regex.test(to)) {
@@ -291,30 +306,20 @@ function validate_experiences() {
     });
     return [valid, exps];
 }
-function comparedates(from, to){
+function comparedates(from, to) {
     console.log(from, to)
-let date1 = new Date(from).getTime();
-let date2 = new Date(to).getTime();
-console.log(date2, date1);
+    let date1 = new Date(from).getTime();
+    let date2 = new Date(to).getTime();
+    console.log(date2, date1);
 
-if(date2<=date1){
-    return false;
-    alert("the date of start canoot be more than the one of end the exp")
+    if (date2 <= date1) {
+        return false;
+        alert("the date of start canoot be more than the one of end the exp")
+    }
+    else {
+        return true;
+    }
 }
-else{
-    return true;
-}
-}
-
-
-
-
-
-
-
-
-
-
 
 const add_btns = document.querySelectorAll("[data-salle]");
 add_btns.forEach(btn => {
@@ -359,7 +364,7 @@ function worker_select(sale_div, salle_role, max_workers, index) {
     let worker_id;
     let current_card;
     divs.forEach(div => {
-          div.style.border = "none";
+        div.style.border = "none";
         div.addEventListener("click", (e) => {
             div.style.border = " 2px solid blue";
             worker_id = div.dataset.id;
@@ -380,6 +385,7 @@ function add_selon_role(sale_div, salle_role, current_worker, current_card, max_
         let div_a_Afficher = null;
         let receps = [];
         const max_sale = sale_div.querySelectorAll(".employee_card_ajoutee").length;
+        console.log(sale_div)
         if (max_sale >= max_workers) {
             alert("this salle is full");
             return;
@@ -407,19 +413,19 @@ function add_selon_role(sale_div, salle_role, current_worker, current_card, max_
                 receps = [document.querySelector("#staff_container1")];
                 div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
                 recep_choix = receps[0];
-                salle_specifique_roles = ["Manager", "Nettoyage", salle_role]
+                salle_specifique_roles = ["Manager", "Nettoyage", "Employé", salle_role]
                 break;
             case 5:
                 receps = [document.querySelector("#security_container1")];
                 div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
                 recep_choix = receps[0];
-                salle_specifique_roles = ["Manager", "Nettoyage", salle_role]
+                salle_specifique_roles = ["Manager", "Nettoyage", "Employé", salle_role]
                 break;
             case 6:
                 receps = [document.querySelector("#archives_container1")];
                 div_a_Afficher = receps[0].querySelectorAll(".employee_card_ajoutee").length;
                 recep_choix = receps[0];
-                salle_specifique_roles = ["Manager", salle_role]
+                salle_specifique_roles = ["Manager", "Employé", salle_role]
                 break;
         }
         for (role of salle_specifique_roles) {
@@ -435,11 +441,12 @@ function add_selon_role(sale_div, salle_role, current_worker, current_card, max_
                                     <button id="btn_remove" class="btn-remove" data-select="remove">&times;</button>
                                 </div>
     `
-    recep_choix.querySelector(`[data-id="${current_worker.id}"]`).addEventListener("click", modal_Open);
-            assigned_workers.push(current_worker);
-            workers.splice(current_index,1)
-             current_card.remove();
-             affichage_workers_cards();
+                recep_choix.querySelector(`[data-id="${current_worker.id}"]`).addEventListener("click", modal_Open);
+                assigned_workers.push(current_worker);
+                workers.splice(current_index, 1)
+                current_card.remove();
+                salles_vides()
+                affichage_workers_cards();
                 return;
             }
             else {
@@ -453,3 +460,18 @@ function add_selon_role(sale_div, salle_role, current_worker, current_card, max_
     }
 
 }
+
+
+function salles_vides() {
+    const rooms = document.querySelectorAll(".salle");
+    console.log(rooms);
+
+    rooms.forEach(room => {
+        room.parentElement.style.backgroundColor = "transparent"
+        const nbr_workers = room.querySelectorAll(".employee_card_ajoutee").length;
+        if (nbr_workers == 0) {
+            room.parentElement.style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+        }
+    })
+}
+salles_vides()
