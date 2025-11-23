@@ -6,12 +6,11 @@ const form_modal = document.getElementById("form_modal");
 
 
 const elements = document.querySelectorAll(".elements");
-
 elements.forEach(element => {
-    element.addEventListener("click", modal_Open);
+    element.addEventListener("click", modal_open);
 });
 
-function modal_Open(event) {
+function modal_open(event) {
     const select = event.target.closest("[data-select]");
 
     if (!select) {
@@ -24,11 +23,8 @@ function modal_Open(event) {
             break;
         case "selection":
             const worker_id = event.target.closest("[data-id]").dataset.id;
-            console.log(worker_id);
-
             const worker = assigned_workers.find(worker => worker.id === Number(worker_id));
             const room_actuelle = event.target.closest("[data-id]").parentElement.parentElement.parentElement.dataset.room;
-            console.log(room_actuelle)
             const modal = document.createElement("div");
             modal.innerHTML = `
         <div class="modal" id="modal_info">
@@ -60,7 +56,7 @@ function modal_Open(event) {
 
  `;
             body.appendChild(modal);
-            modal.querySelector(".elements").addEventListener("click", modal_Open);
+            modal.querySelector(".elements").addEventListener("click", modal_open);
             const exp_infos = body.querySelector(".exp_infos");
             worker.exp.forEach(exp => {
                 const div = document.createElement("div");
@@ -71,7 +67,8 @@ function modal_Open(event) {
                         <h3>Role: <span class="employee-role_info">${exp.role_exp}</span></h3>
                         <h3>Periode: <span class="employee-role_info">11/12/2024 - 13/10/2025</span></h3>
                         <!-- <button id="btn_edit" class="btn-edit">Edit</button> -->
-                    </div>
+ 
+                        </div>
     `
                 exp_infos.appendChild(div);
             });
@@ -150,11 +147,11 @@ formulaire.addEventListener("submit", (e) => {
             return;
         }
         const manager = workers.find(manager => manager.manager === true)
-        let manager_assigned=null;
-      if(assigned_workers.length>=1){
-           manager_assigned = assigned_workers.find(worker=> worker.manager===true)
+        let manager_assigned = null;
+        if (assigned_workers.length >= 1) {
+            manager_assigned = assigned_workers.find(worker => worker.manager === true)
 
-      }
+        }
         if (manager || inputs[1].value === "Manager" && manager_assigned) {
             alert("there is only one manager")
             return;
@@ -190,7 +187,7 @@ function affichage_workers_cards() {
     workers.forEach(worker => {
         const worker_card = document.createElement("div");
         worker_card.innerHTML = `
-            <div class="employee-card">
+            <div class="employee-card" data-id= "${worker.id}" data-select="selection">
                 <img src="${worker.img}" class="employee-photo" />
                 <div class="employee-info">
                     <h4 class="employee-name">${worker.name}</h4>
@@ -215,7 +212,7 @@ function affichage_workers_cards_toAssign() {
         const worker_card = document.createElement("div");
         worker_card.innerHTML = `
             <div>
-                <div class="employee-card_afficher elements" data-id= "${worker.id}">
+                <div class="employee-card_afficher" data-id= "${worker.id}">
                     <img src="${worker.img}" class="employee-photo" />
                     <div class="employee-info">
                         <h4 class="employee-name">${worker.name}</h4>
@@ -306,12 +303,10 @@ function validate_experiences() {
     });
     return [valid, exps];
 }
+
 function comparedates(from, to) {
-    console.log(from, to)
     let date1 = new Date(from).getTime();
     let date2 = new Date(to).getTime();
-    console.log(date2, date1);
-
     if (date2 <= date1) {
         return false;
         alert("the date of start canoot be more than the one of end the exp")
@@ -385,7 +380,6 @@ function add_selon_role(sale_div, salle_role, current_worker, current_card, max_
         let div_a_Afficher = null;
         let receps = [];
         const max_sale = sale_div.querySelectorAll(".employee_card_ajoutee").length;
-        console.log(sale_div)
         if (max_sale >= max_workers) {
             alert("this salle is full");
             return;
@@ -441,7 +435,7 @@ function add_selon_role(sale_div, salle_role, current_worker, current_card, max_
                                     <button id="btn_remove" class="btn-remove" data-select="remove">&times;</button>
                                 </div>
     `
-                recep_choix.querySelector(`[data-id="${current_worker.id}"]`).addEventListener("click", modal_Open);
+                recep_choix.querySelector(`[data-id="${current_worker.id}"]`).addEventListener("click", modal_open);
                 assigned_workers.push(current_worker);
                 workers.splice(current_index, 1)
                 current_card.remove();
@@ -464,8 +458,6 @@ function add_selon_role(sale_div, salle_role, current_worker, current_card, max_
 
 function salles_vides() {
     const rooms = document.querySelectorAll(".salle");
-    console.log(rooms);
-
     rooms.forEach(room => {
         room.parentElement.style.backgroundColor = "transparent"
         const nbr_workers = room.querySelectorAll(".employee_card_ajoutee").length;

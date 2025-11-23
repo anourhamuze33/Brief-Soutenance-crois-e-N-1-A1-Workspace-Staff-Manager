@@ -1,11 +1,12 @@
 /* ================== global ========== */
 @import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Libre+Barcode+EAN13+Text&family=Noto+Sans+Bhaiksuki&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* couleur rouge orange vert et bleu */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -21,9 +22,9 @@ body {
     width: 25vw;
     background-color: #ebecfd;
     padding: 1.1rem;
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    gap: 1rem; 
+    gap: 1rem;
 }
 
 .sidebar h2 {
@@ -32,11 +33,13 @@ body {
     color: #000000;
     font-weight: bold;
 }
+
 .staff_list {
- display: flex; 
- flex-direction: column;
- gap: 1rem;  
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
+
 .btn_ajout-employees {
     width: 100%;
     background-color: #2ecc5d;
@@ -65,6 +68,7 @@ body {
 .employee-card:active {
     cursor: grabbing;
 }
+
 .employee-card:hover {
     transform: translateY(-3px);
 }
@@ -76,6 +80,7 @@ body {
     border-radius: 50%;
     border: 0.2rem solid #dfdef1;
 }
+
 .employee-name {
     font-size: 1rem;
     font-weight: bold;
@@ -88,7 +93,7 @@ body {
 }
 
 /* btn of editing employee infos */
-.btn-edit{
+.btn-edit {
     width: 50%;
     height: 2vw;
     font-size: 0.8rem;
@@ -106,85 +111,100 @@ body {
 .btn-remove:hover {
     background: #e63939;
 }
+
 /* ==================== main section ================== */
-.main-section{
-width: 80vw;
-height: 42vw;
-display: flex;
-justify-content: center;
-align-items: center;
+.main-section {
+    width: 80vw;
+    height: 42vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.sections-container{
-width: 72vw;
-height: 41vw;
-background-image: url(plan-69159a65c5684763515973.jpg);
-background-size: contain;
-background-repeat: no-repeat;
-display: flex;
-flex-direction: row;
+
+.sections-container {
+    width: 72vw;
+    height: 41vw;
+    background-image: url(plan-69159a65c5684763515973.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
 }
+
 /* ============= division of our page ============= */
-.reception_conferance{
-width: 39%;
-height: 100%;
-display: flex;
-flex-direction: column;
+.reception_conferance {
+    width: 39%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.conferance{
-width: 99%;
-height: 34%;
-display: flex;
-flex-direction: column;
-padding-top: 0.8rem;
+
+.conferance {
+    width: 99%;
+    height: 34%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.8rem;
 }
-.reception{
-width: 99%;
-height: 66%;
+
+.reception {
+    width: 99%;
+    height: 66%;
 }
-.couloir1{
-width: 15.3%;
-height: 100%;
+
+.couloir1 {
+    width: 15.3%;
+    height: 100%;
 }
-.rooms{
+
+.rooms {
     display: flex;
     width: 45%;
     height: 100%;
 }
-.rooms1{
-width: 50%;
-height: 100%;
-display: flex;
-flex-direction: column;
+
+.rooms1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.rooms2{
-width: 50%;
-height: 100%;
-display: flex;
-flex-direction: column;
+
+.rooms2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.servers{
-width: 100%;
-height: 35%;
+
+.servers {
+    width: 100%;
+    height: 35%;
 }
-.couloir2{
-width: 100%;
-height: 31%;
+
+.couloir2 {
+    width: 100%;
+    height: 31%;
 }
-.stuff-room{
-width: 100%;
-height: 34%;
+
+.stuff-room {
+    width: 100%;
+    height: 34%;
 }
-.security-room{
-width: 100%;
-height: 35%;
+
+.security-room {
+    width: 100%;
+    height: 35%;
 }
-.couloir3{
-width: 100%;
-height: 31%;
+
+.couloir3 {
+    width: 100%;
+    height: 31%;
 }
-.vault{
-width: 100%;
-height: 35%;
+
+.vault {
+    width: 100%;
+    height: 35%;
 }
 
 /* --------------- modal formulaire --------------*/
@@ -199,9 +219,11 @@ height: 35%;
     justify-content: center;
     align-items: center;
 }
+
 .cache {
     display: none;
 }
+
 .modal_container {
     width: 30%;
     height: 38vw;
@@ -211,6 +233,7 @@ height: 35%;
     position: relative;
     overflow-y: scroll;
 }
+
 .close_x {
     position: absolute;
     top: 0.3rem;
@@ -218,23 +241,27 @@ height: 35%;
     font-size: 1.7rem;
     cursor: pointer;
 }
-.labeles{
+
+.labeles {
     font-size: 1rem;
     color: #777;
 }
+
 .inputs {
     width: 100%;
     border-radius: 0.5rem;
     height: 2rem;
     border: 1px solid #b8b6b6;
 }
+
 .inputs:hover {
     border: 1px solid #832a2a;
 }
-#worker_formulaire{
-display: flex;
-flex-direction: column;
-gap: 0.5rem;
+
+#worker_formulaire {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .photo_show img {
@@ -243,7 +270,8 @@ gap: 0.5rem;
     border-radius: 50%;
     border: 0.2rem solid #dfdef1;
 }
-.btn_ajouter_exp{
+
+.btn_ajouter_exp {
     background: #f39c12;
     width: 50%;
     height: 2rem;
@@ -253,7 +281,8 @@ gap: 0.5rem;
     cursor: pointer;
     margin: 1rem 0;
 }
-.bttn_ajouter_worker{
+
+.bttn_ajouter_worker {
     background: #3498db;
     border: none;
     color: white;
@@ -263,22 +292,23 @@ gap: 0.5rem;
     cursor: pointer;
     font-weight: bold;
 }
-.bttn_ajouter_worker{
+
+.bttn_ajouter_worker {
     align-self: flex-end;
 }
 
-.exp_container{
+.exp_container {
     width: 100%;
     border: 0.1rem solid #77777793;
     border-radius: 0.5rem;
     background-color: #ebecfd;
     padding: 1.1rem;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.modal_select_container{
+.modal_select_container {
     width: 30%;
     height: 90%;
     background-color: #ffffff;
@@ -290,10 +320,12 @@ gap: 0.5rem;
     align-items: center;
     gap: 0.7rem;
 }
-.modal_select_container h2{
-align-self: flex-start;
-margin-bottom: 0.5rem;
+
+.modal_select_container h2 {
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
 }
+
 .employee-card_afficher {
     display: flex;
     align-items: center;
@@ -306,54 +338,62 @@ margin-bottom: 0.5rem;
     cursor: grab;
     transition: transform 0.2s ease;
 }
+
 .employee-card_afficher:active {
     cursor: grabbing;
 }
+
 .employee-card_afficher:hover {
     transform: translateY(-3px);
     border: 1px solid #832a2a;
 }
-.btns_assign_close{
+
+.btns_assign_close {
     padding-top: 1.5rem;
     width: 100%;
     align-self: flex-start;
     display: flex;
     justify-content: space-between;
 }
-.btn_close{
-width: 45%;
-height: 2rem;
-font-size: 1rem;
-background-color: #0059ff;
-border: none;
-border-radius: 0.4rem;
-color: #ffffff;
-font-weight: bold;
-cursor: pointer;
+
+.btn_close {
+    width: 45%;
+    height: 2rem;
+    font-size: 1rem;
+    background-color: #0059ff;
+    border: none;
+    border-radius: 0.4rem;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
 }
-.btn_assign{
-width: 45%;
-height: 2rem;
-font-size: 1rem;
-background-color: #f31212;
-border: none;
-border-radius: 0.4rem;
-color: #ffffff;
-font-weight: bold;
-cursor: pointer;
+
+.btn_assign {
+    width: 45%;
+    height: 2rem;
+    font-size: 1rem;
+    background-color: #f31212;
+    border: none;
+    border-radius: 0.4rem;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
 }
+
 .btn_assign:hover {
     transform: translateY(-2px);
     border: 1px solid #000000;
     transition: transform 0.2s ease;
 }
+
 .btn_close:hover {
     transform: translateY(-2px);
     border: 1px solid #000000;
     transition: transform 0.2s ease;
 }
+
 /* ---------------- conferance salle ------------------ */
-.conferance_container{
+.conferance_container {
 
     height: auto;
     width: 100%;
@@ -365,50 +405,59 @@ cursor: pointer;
     align-content: center;
 
 }
-.conferance_container2, .conferance_container1{
-width: 35%;
-height: auto;
-display: flex;
-flex-direction: column;
-gap: 0.4rem;
-justify-content: center;
+
+.conferance_container2,
+.conferance_container1 {
+    width: 35%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    justify-content: center;
 }
-.employee_photo_ajoutee{
+
+.employee_photo_ajoutee {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     border: 0.1rem solid #dfdef1;
 }
+
 .employee_name_ajoutee {
     font-size: 0.63rem;
     font-weight: bold;
 }
+
 .btn-remove:hover {
     transform: translateY(-2px);
     border: 1px solid #000000;
     transition: transform 0.2s ease;
 }
+
 .employee_card_ajoutee:hover {
     transform: translateY(-2px);
     border: 1px solid #000000;
     transition: transform 0.2s ease;
 }
+
 .employee_role_ajoutee {
     font-size: 0.5rem;
     margin: 3px 0 10px;
     color: #777;
 }
-.employee_card_ajoutee{
-background-color: #ffffff;
-display: flex;
-height: 2.7rem;
-padding: 4px;
-border-radius: 0.5rem;
-gap: 0.5rem;
-cursor: pointer;
-cursor: grab;
+
+.employee_card_ajoutee {
+    background-color: #ffffff;
+    display: flex;
+    height: 2.7rem;
+    padding: 4px;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    cursor: pointer;
+    cursor: grab;
 }
-.btn-remove{
+
+.btn-remove {
     align-self: flex-end;
     align-self: center;
     width: 18%;
@@ -418,7 +467,8 @@ cursor: grab;
     border-radius: 0.4rem;
     cursor: pointer;
 }
-.conferance_arrange{
+
+.conferance_arrange {
     width: 100%;
     height: 100%;
     display: flex;
@@ -427,9 +477,10 @@ cursor: grab;
     align-items: center;
     position: relative;
     top: 0.5rem;
-    gap: 0.2rem; 
+    gap: 0.2rem;
 }
-.btn_add_inscreen{
+
+.btn_add_inscreen {
     width: 2rem;
     height: 1rem;
     background-color: #189d32;
@@ -440,12 +491,14 @@ cursor: grab;
     color: #ffffff;
     font-weight: bold;
 }
+
 /* ---------------- recetion salle ------------------ */
-.reception{
-display: flex;
-align-items: center;
+.reception {
+    display: flex;
+    align-items: center;
 }
-.reception_arrange{
+
+.reception_arrange {
     width: 100%;
     height: 90%;
     display: flex;
@@ -453,129 +506,358 @@ align-items: center;
     justify-content: center;
     align-items: center;
 }
-.reception_container{
-width: 80%;
-height: 90%;
-display: flex;
-justify-content: space-between;
+
+.reception_container {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
 }
-.reception_container1, .reception_container2{
-height: 100%;
-width: 48%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 0.5rem;
+
+.reception_container1,
+.reception_container2 {
+    height: 100%;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
 }
+
 /* -------------------- serveurs room ----------------- */
-.servers{
+.servers {
 
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.servers_arrange{
-display: flex ;
-flex-direction: column;
-justify-content: center;
 
-width: 100%;
-height: 90%;
+.servers_arrange {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 90%;
 }
-.servers_container{
-width: 100%;
-height: 90%;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 0.4rem;
+
+.servers_container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
 }
-.servers_container1{
-width: 60%;
-height: 90%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 0.3rem;
+
+.servers_container1 {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
 }
+
 /* ----------------------- informatio modal ---------------*/
-.modal_info_container{
-width: 40%;
-height: 95%;
-display: flex;
-flex-direction: column;
-padding: 1.5rem;
-background-color: #ffffff;
-border-radius: 1rem;
-gap: 1rem;
+.modal_info_container {
+    width: 40%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    gap: 1rem;
 }
-.employee-card_infos{
-width: 100%;
-height: 30%;
-display: flex;
-align-items: center;
-gap: 2rem;
-padding-left: 1rem;
-background-color: #f1edfc;
-border-radius: 1rem;
-box-shadow: 0 10px 20px #0000001e;
-border-bottom: 1px solid #b6b4be;
+
+.employee-card_infos {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 1rem;
+    background-color: #f1edfc;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px #0000001e;
+    border-bottom: 1px solid #b6b4be;
 }
-.employee-photo_infos{
+
+.employee-photo_infos {
     width: 7;
     height: 7rem;
     border-radius: 50%;
     border: 0.25rem solid #a4a8d865;
 }
-.employee-info_infos{
-height: 85%;
-display: flex;
-flex-direction: column;
-gap: 0.3rem;
+
+.employee-info_infos {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
-.employee-info_infos .btn-edit{
-font-weight: bold;
-font-size: 1rem;
+
+.employee-info_infos .btn-edit {
+    font-weight: bold;
+    font-size: 1rem;
 }
-.employee-role_infos{
+
+.employee-role_infos {
     font-size: 1.2rem;
     color: #777;
 }
-.employee-info_infos h2{
-font-size: 2rem;
-color: #3c3838;
+
+.employee-info_infos h2 {
+    font-size: 2rem;
+    color: #3c3838;
 }
-.email_location{
- height: 28%;
- padding: 1rem;
+
+.email_location {
+    height: 28%;
+    padding: 1rem;
 }
-.email_location1{
+
+.email_location1 {
     gap: 0.4rem;
     font-size: 0.8rem;
 }
-.employee-role_info{
-        font-size: 1rem;
-        font-weight: normal;
+
+.employee-role_info {
+    font-size: 1rem;
+    font-weight: normal;
     color: #777;
 }
-.exp_infos{
+
+.exp_infos {
     height: 50%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     overflow-y: scroll;
 }
-.exp{
+
+.exp {
     height: 72%;
 }
-.close_modal{
+
+.close_modal {
     font-weight: bolder;
     font-size: 1.3rem;
     align-self: flex-end;
     cursor: pointer;
 }
-.modal_arrang{
+
+.modal_arrang {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+
+@media (min-width: 1280px) {
+    body {
+        flex-direction: row;
+    }
+
+    .main-section {
+        height: auto;
+    }
+}
+
+@media (max-width: 1279px) {
+    .sidebar {
+        width: 30vw;
+    }
+
+
+}
+
+@media (max-width: 1023px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .main-section {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .reception_conferance {
+        width: 100%;
+    }
+
+    .sections-container {
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+        ;
+        background: none;
+
+    }
+
+    .conferance_arrange {
+        border: 2px solid #000000;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    .reception_arrange {
+        width: 100%;
+        border: 2px solid #000000;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+
+    .servers_arrange {
+        border: 2px solid #000000;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+
+    .rooms1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .couloir2 {
+        width: 10%;
+    }
+
+    .rooms {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rooms2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .servers {
+        width: 150%;
+    }
+
+    .employee_card_ajoutee {
+        width: 100%;
+    }
+
+    .servers_container {
+        width: 100%;
+    }
+
+    .servers_container1 {
+        width: 100%;
+    }
+
+    .employee-card_afficher {
+        width: 90%;
+    }
+
+    .employee-card {
+        width: 100%;
+    }
+
+
+
+
+}
+
+@media (max-width: 767px) {
+
+    body {
+        flex-direction: column;
+        padding: 0;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0.7rem;
+    }
+
+    .staff_list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.7rem;
+    }
+
+    .employee-card {
+        width: 47%;
+        padding: 0.4rem;
+    }
+
+    .sections-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .reception_conferance,
+    .rooms {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .employee_card_ajoutee {
+        align-self: center;
+        width: 100%;
+    }
+
+    .btn_add_inscreen {
+        width: 2.5rem;
+        height: 1.5rem;
+    }
+
+    .modal_container,
+    .modal_select_container,
+    .modal_info_container {
+        width: 90%;
+        height: 85vh;
+        overflow-y: scroll;
+    }
+
+    .employee-photo_infos {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .btn-edit {
+        height: 20%;
+    }
+
+    .employee-card_afficher {
+        width: 95%;
+    }
+
+    .servers_container {
+        width: 100%;
+    }
+
+    .servers_container1 {
+        width: 100%;
+    }
+
+
+    .employee-card {
+        width: 100%;
+    }
+
 }

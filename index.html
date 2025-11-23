@@ -12,7 +12,7 @@
 <body class="body">
     <aside class="sidebar">
         <h2>Unassigned Staff</h2>
-        <div id="staff_list" class="staff_list">
+        <div id="staff_list" class="staff_list elements">
             <!-- js ici ajouter un employee -->
             <div class="employee-card">
                 <img src="hamza anouar.png" class="employee-photo" />
@@ -25,7 +25,8 @@
             <!-- js stop ici ajouter un employee -->
 
         </div>
-        <button id="btn_ajout_employees" class="btn_ajout-employees elements" data-select="add">+ Add New Worker</button>
+        <button id="btn_ajout_employees" class="btn_ajout-employees elements" data-select="add">+ Add New
+            Worker</button>
 
     </aside>
 
@@ -35,7 +36,7 @@
                 <div id="conferance" class="conferance">
                     <div id="conferance_arrange" class="conferance_arrange" data-max-workers="6" data-role="Employé">
                         <div class="conferance_container" id="conferance_container" data-room="conferance room">
-                            <div class="conferance_container1" id="conferance_container1" >
+                            <div class="conferance_container1" id="conferance_container1">
 
                                 <!-- js ici ajouter un employee -->
                                 <div class="employee_card_ajoutee elements" data-select="selection">
@@ -85,12 +86,14 @@
                                 <!-- js stop ici ajouter un employee -->
                             </div>
                         </div>
-                        <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="conferance_arrange">+</button>
+                        <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign"
+                            data-salle="conferance_arrange">+</button>
                     </div>
                 </div>
 
                 <div id="reception" class="reception">
-                    <div id="reception_arrange" class="reception_arrange salle" data-role="Réceptionniste" data-max-workers="10">
+                    <div id="reception_arrange" class="reception_arrange salle" data-role="Réceptionniste"
+                        data-max-workers="10">
                         <div class="reception_container" id="reception_container" data-room="reception room">
                             <div class="reception_container1" id="reception_container1">
                                 <!-- js ici ajouter un employee -->
@@ -158,7 +161,8 @@
                                 <!-- js stop ici ajouter un employee -->
                             </div>
                         </div>
-                        <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="reception_arrange">+</button>
+                        <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign"
+                            data-salle="reception_arrange">+</button>
                     </div>
 
 
@@ -171,8 +175,9 @@
             <!-- la parties des roomes -->
             <div class="rooms">
                 <div class="rooms1">
-                    <div id="servers" class="servers" >
-                        <div id="servers_arrange" class="servers_arrange salle" data-max-workers="3" data-role="Technicien IT">
+                    <div id="servers" class="servers">
+                        <div id="servers_arrange" class="servers_arrange salle" data-max-workers="3"
+                            data-role="Technicien IT">
                             <div class="servers_container" id="servers_container" data-room="servers room">
                                 <div class="servers_container1" id="servers_container1">
                                     <!-- js ici ajouter un employee -->
@@ -207,7 +212,8 @@
                                     <!-- js stop ici ajouter un employee -->
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="servers_arrange">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign"
+                                data-salle="servers_arrange">+</button>
                         </div>
                     </div>
 
@@ -229,14 +235,16 @@
                                     <!-- js stop ici ajouter un employee -->
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="staff_arrange">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign"
+                                data-salle="staff_arrange">+</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="rooms2">
                     <div id="security" class="servers">
-                        <div id="security_arrange" class="servers_arrange salle" data-max-workers="3" data-role="Agent de sécurité">
+                        <div id="security_arrange" class="servers_arrange salle" data-max-workers="3"
+                            data-role="Agent de sécurité">
                             <div class="servers_container" id="security_container" data-room="security room">
                                 <div class="servers_container1" id="security_container1">
                                     <!-- js ici ajouter un employee -->
@@ -261,7 +269,8 @@
                                     <!-- js stop ici ajouter un employee -->
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="security_arrange">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign"
+                                data-salle="security_arrange">+</button>
                         </div>
 
                     </div>
@@ -269,13 +278,15 @@
                     <div class="couloir3"></div>
 
                     <div id="archives" class="servers">
-                        <div id="archives_arrange" class="servers_arrange salle" data-max-workers="3" data-role="Employé">
+                        <div id="archives_arrange" class="servers_arrange salle" data-max-workers="3"
+                            data-role="Employé">
                             <div class="servers_container" id="archives_container" data-room="archives room">
                                 <div class="servers_container1" id="archives_container1">
 
                                 </div>
                             </div>
-                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign" data-salle="archives_arrange">+</button>
+                            <button id="btn-add_inscreen" class="btn_add_inscreen" data-select="assign"
+                                data-salle="archives_arrange">+</button>
                         </div>
 
                     </div>
@@ -325,7 +336,7 @@
 
                 <button type="button" id="ajouter-exp" class="btn_ajouter_exp">+ Add Experience</button>
                 <div class="experiences">
-                <!-- <div class="exp_container" id="exp_container">
+                    <!-- <div class="exp_container" id="exp_container">
 
                     <label class="labeles">Campany</label>
                     <input type="text" id="email" class="inputs" required />
@@ -354,52 +365,52 @@
         <div class="modal_select_container" id="modal_select_container">
             <h2>Select worker to assign</h2>
             <div class="modal_arrang">
-            <div>
-                <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher">
-                    <img src="hamza anouar.png" class="employee-photo" />
-                    <div class="employee-info">
-                        <h4 class="employee-name">Hamza Anouar</h4>
-                        <p class="employee-role">Technicien IT</p>
-                        <button id="btn_edit" class="btn-edit">Edit</button>
+                <div>
+                    <!-- js ici afficher un employee pour assigner-->
+                    <div class="employee-card_afficher">
+                        <img src="hamza anouar.png" class="employee-photo" />
+                        <div class="employee-info">
+                            <h4 class="employee-name">Hamza Anouar</h4>
+                            <p class="employee-role">Technicien IT</p>
+                            <button id="btn_edit" class="btn-edit">Edit</button>
+                        </div>
                     </div>
+                    <!-- js stop ici affichage un employee -->
+
                 </div>
-                <!-- js stop ici affichage un employee -->
 
-            </div>
-
-            <div>
-                <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher">
-                    <img src="hamza anouar.png" class="employee-photo" />
-                    <div class="employee-info">
-                        <h4 class="employee-name">Hamza Anouar</h4>
-                        <p class="employee-role">Technicien IT</p>
-                        <button id="btn_edit" class="btn-edit">Edit</button>
+                <div>
+                    <!-- js ici afficher un employee pour assigner-->
+                    <div class="employee-card_afficher">
+                        <img src="hamza anouar.png" class="employee-photo" />
+                        <div class="employee-info">
+                            <h4 class="employee-name">Hamza Anouar</h4>
+                            <p class="employee-role">Technicien IT</p>
+                            <button id="btn_edit" class="btn-edit">Edit</button>
+                        </div>
                     </div>
-                </div>
-                <!-- js stop ici affichage un employee -->
+                    <!-- js stop ici affichage un employee -->
 
-            </div>
-            <div>
-                <!-- js ici afficher un employee pour assigner-->
-                <div class="employee-card_afficher">
-                    <img src="hamza anouar.png" class="employee-photo" />
-                    <div class="employee-info">
-                        <h4 class="employee-name">amza Anouar</h4>
-                        <p class="employee-role">Technicien IT</p>
-                        <button id="btn_edit" class="btn-edit">Edit</button>
+                </div>
+                <div>
+                    <!-- js ici afficher un employee pour assigner-->
+                    <div class="employee-card_afficher">
+                        <img src="hamza anouar.png" class="employee-photo" />
+                        <div class="employee-info">
+                            <h4 class="employee-name">amza Anouar</h4>
+                            <p class="employee-role">Technicien IT</p>
+                            <button id="btn_edit" class="btn-edit">Edit</button>
+                        </div>
                     </div>
-                </div>
-                <!-- js stop ici affichage un employee -->
+                    <!-- js stop ici affichage un employee -->
 
+                </div>
             </div>
-        </div>
-         <div class="btns_assign_close" id="btns_assign_close">
+            <div class="btns_assign_close" id="btns_assign_close">
                 <button class="btn_close" id="btn_close">Assign</button>
                 <button class="btn_assign elements" id="btn_assign" data-select="close">Close</button>
-         </div>
-         </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
