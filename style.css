@@ -585,7 +585,7 @@ body {
 }
 
 .employee-photo_infos {
-    width: 7;
+    width: 7rem;
     height: 7rem;
     border-radius: 50%;
     border: 0.25rem solid #a4a8d865;
