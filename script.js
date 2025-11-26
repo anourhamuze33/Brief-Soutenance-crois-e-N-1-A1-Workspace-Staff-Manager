@@ -232,10 +232,30 @@ function affichage_workers_cards() {
 //selection de assign model container in order to empty it
 const assign_container = document.querySelector(".modal_arrang");
 
+
+
+
+
+
+
+
 //la fonction qui affiche les elements a selectionne dans le modal to assign
-function affichage_workers_cards_toAssign() {
+function affichage_workers_cards_toAssign(rome_role) {
+
+console.log(rome_role);
     assign_container.innerHTML = "";
-    workers.forEach(worker => {
+
+const filtred_workers = workers.filter(worker=>{
+    
+        if(worker.role===rome_role){
+         return worker;
+        }
+ 
+})
+console.log(filtred_workers);
+
+
+    filtred_workers.forEach(worker => {
         const worker_card = document.createElement("div");
         worker_card.innerHTML = `
             <div>
@@ -353,25 +373,26 @@ add_btns.forEach(btn => {
             modal_assign.classList.remove("cache");
 // la determination de la role du salle
             let rome_role = sale_div.dataset.role;
+            affichage_workers_cards_toAssign(rome_role)
 //switch selon la salle id
             switch (salle) {
                 case "conferance_arrange":
-                    worker_select(sale_div, rome_role, max_workers, 1);
+                    worker_select(sale_div, rome_role, max_workers, 1, sale_div);
                     break;
                 case "reception_arrange":
-                    worker_select(sale_div, rome_role, max_workers, 2);
+                    worker_select(sale_div, rome_role, max_workers, 2, sale_div);
                     break;
                 case "servers_arrange":
-                    worker_select(sale_div, rome_role, max_workers, 3);
+                    worker_select(sale_div, rome_role, max_workers, 3, sale_div);
                     break;
                 case "staff_arrange":
-                    worker_select(sale_div, rome_role, max_workers, 4);
+                    worker_select(sale_div, rome_role, max_workers, 4, sale_div);
                     break;
                 case "security_arrange":
-                    worker_select(sale_div, rome_role, max_workers, 5);
+                    worker_select(sale_div, rome_role, max_workers, 5, sale_div);
                     break;
                 case "archives_arrange":
-                    worker_select(sale_div, rome_role, max_workers, 6);
+                    worker_select(sale_div, rome_role, max_workers, 6, sale_div);
                     break;
             }
         }
@@ -382,7 +403,7 @@ const modal_select = document.querySelector(".modal_select_container");
 let current_worker = 0;
 
 // la fonction qui select worker afin de l'assigner
-function worker_select(sale_div, salle_role, max_workers, index) {
+function worker_select(sale_div, salle_role, max_workers, indexm ,sale_div) {
     const divs = modal_select.querySelectorAll(".employee-card_afficher");
     let worker_id;
     let current_card;
@@ -502,7 +523,17 @@ salles_vides();
 
 
 
+let nome;
+function affich(nome){
+const body_cont= document.querySelector(".body")
+const name = body_cont.querySelectorAll(".employee-name");
+console.log(name);
+name.forEach(name=>{
+if(name.textContent===nome){
+    console.log(name.parentElement.parentElement);
+}
+})
 
-
+}
 
 
