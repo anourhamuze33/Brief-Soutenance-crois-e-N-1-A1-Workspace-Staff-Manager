@@ -265,8 +265,8 @@ body {
 }
 
 .photo_show img {
-    width: 90px;
-    height: 90px;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
     border: 0.2rem solid #dfdef1;
 }
@@ -826,9 +826,7 @@ body {
         height: 1.5rem;
     }
 
-    .modal_container,
-    .modal_select_container,
-    .modal_info_container {
+    .modal_container,.modal_select_container,.modal_info_container {
         width: 90%;
         height: 85vh;
         overflow-y: scroll;
